@@ -14,6 +14,10 @@ from mlx90614 import MLX90614
 
 # Credit for detection goes to https://www.youtube.com/watch?v=Ax6P93r32KU&ab_channel=BalajiSrinivasan
 
+# Range of object temperature
+rangeHigh = 99
+rangeLow = 95
+
 bus = SMBus(1)
 sensor = MLX90614(bus, address=0x5A)
 
@@ -121,7 +125,11 @@ while True:
 
         # Determine if the person is wearing a mask or not and display the corresponding info
         label = "Mask" if mask > withoutMask else "No Mask"
-        color = (0, 255, 0) if label == "Mask" else (0, 0, 255)
+
+        if label == "Mask" and (rangeHigh >= temp >= rangeLow):
+            color = (0, 255, 0)
+        else:
+            color = (0, 0, 255)
 
         # Include the probability of the label
         label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
