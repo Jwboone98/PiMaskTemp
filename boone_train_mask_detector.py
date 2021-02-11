@@ -20,6 +20,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import os
 
+# Credit goes to https://www.youtube.com/watch?v=Ax6P93r32KU&ab_channel=BalajiSrinivasan
+
 # Initialize the learning rate, number of epochs to train for and the batch size
 INIT_LR = 1e-4
 EPOCHS = 20
