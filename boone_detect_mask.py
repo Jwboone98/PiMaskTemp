@@ -12,6 +12,8 @@ from os.path import dirname, join
 from smbus2 import SMBus
 from mlx90614 import MLX90614
 
+# Credit for detection goes to https://www.youtube.com/watch?v=Ax6P93r32KU&ab_channel=BalajiSrinivasan
+
 bus = SMBus(1)
 sensor = MLX90614(bus, address=0x5A)
 
