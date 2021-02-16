@@ -126,7 +126,7 @@ while True:
         # Determine if the person is wearing a mask or not and display the corresponding info
         label = "Mask" if mask > withoutMask else "No Mask"
 
-        if label == "Mask" and (rangeHigh >= temp >= rangeLow):
+        if label == "Mask" and (rangeHigh >= object_temp >= rangeLow):
             color = (0, 255, 0)
         else:
             color = (0, 0, 255)
