@@ -36,7 +36,3 @@ print sensor.get_amb_temp()
 print sensor.get_obj_temp()
 bus.close()
 ```
-
-## License
-
-This project is licensed under the terms of the MIT license.
